@@ -41,6 +41,10 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `wayfinder` | Map work into a tree of agent-sized tickets. |
 | `writing-for-agents` | How to write any document an agent consumes. |
 
+## Credit and licence
+
+Adapted from [`mattpocock/skills`](https://github.com/mattpocock/skills) by Matt Pocock, MIT licensed. Several skills here started as his and have been reworked; the rest are new. See [LICENSE](LICENSE), which carries both copyright notices.
+
 ## Writing more
 
 `writing-for-agents` is the reference the rest are written against: context pointers, the information hierarchy, completion criteria, leading words, pruning.

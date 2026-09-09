@@ -127,3 +127,7 @@ The end-to-end behaviour this ticket makes work, from the user's perspective, no
 </issue-template>
 
 In either form, avoid specific file paths or code snippets: they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
+
+### 6. Report what was published
+
+Tell the user what landed: the umbrella first (reference and title, when there is one), then every ticket in published order, each as its number or reference plus its title. Every ticket you created appears exactly once.

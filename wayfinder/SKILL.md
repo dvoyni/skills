@@ -1,6 +1,6 @@
 ---
 name: wayfinder
-description: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.
+description: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, resolve them one at a time until the way to the destination is clear, then hand the map over as the umbrella its implementation tickets hang from.
 disable-model-invocation: true
 ---
 
@@ -10,7 +10,7 @@ The destination varies per effort, and naming it is the first act of charting: i
 
 ## Plan, don't do
 
-Wayfinder is **planning** by default: each ticket resolves a decision, and the map is done when the way is clear, with nothing left to decide before someone goes and does the thing. The pull to just do the work is usually the signal you've reached the edge of the map and it's time to hand off. An effort can override this in its **Notes**, carrying execution into the map itself, but absent that, produce decisions, not deliverables.
+Wayfinder is **planning** by default: each ticket resolves a decision, and the map is done when the way is clear, with nothing left to decide before someone goes and does the thing. The pull to just do the work is the signal you've reached the edge of the map, and that edge is the **handover**: the map stops planning and becomes the umbrella the build hangs from, so one issue carries both phases. An effort can override this in its **Notes**, carrying execution into the decision tickets themselves, but absent that, produce decisions, not deliverables.
 
 ## Refer by name
 
@@ -66,7 +66,7 @@ Each ticket carries a `wayfinder:<type>` label, one of `research`, `prototype`, 
 
 A session **claims** a ticket by assigning it to the dev driving the map, **first**, before any work, so concurrent sessions skip it. That assignee _is_ the claim: an open, unassigned ticket is unclaimed.
 
-Blocking uses the tracker's **native** dependency relationship: essential because it renders the frontier _visually_ in the tracker's own UI, so the human sees what's takeable without opening the map. Only a tracker that lacks native blocking falls back to a body convention. A ticket is **unblocked** when every ticket blocking it is closed; the **frontier** is the open, unblocked, unclaimed children, the edge of the known.
+Blocking uses the tracker's **native** dependency relationship: essential because it renders the frontier _visually_ in the tracker's own UI, so the human sees what's takeable without opening the map. Only a tracker that lacks native blocking falls back to a body convention. A ticket is **unblocked** when every ticket blocking it is closed; the **frontier** is the open, unblocked, unclaimed decision tickets, the edge of the known. After the handover the map's children include implementation tickets; those are `/implement`'s, not the frontier's.
 
 The answer isn't part of the body; it's recorded on resolution (see [Work through the map](#work-through-the-map)). Assets created while resolving a ticket are linked from the issue, not pasted in.
 
@@ -102,7 +102,7 @@ Ruling something out of scope is a scoping act, not a step on the route. When a 
 
 ## Invocation
 
-Two modes. Either way, **never resolve more than one ticket per session**, with the exception of research tickets.
+Three modes. Whichever you're in, **never resolve more than one ticket per session**, with the exception of research tickets.
 
 ### Chart the map
 
@@ -120,9 +120,20 @@ User invokes with a loose idea.
 User invokes with a map (URL or number). A ticket is **optional**: without one, you pick the next decision, not the user.
 
 1. Load the **map**: the low-res view, not every ticket body.
-2. Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. **Claim it**: assign it to yourself before any work.
+2. Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. **Claim it**: assign it to yourself before any work. **Announce it**: name the ticket you took as the session's first line of narration, ahead of any zooming or skill calls, so the human sees what is in work from the top.
 3. Resolve it. **Zoom as needed**: fetch the full body of any related or closed ticket on demand; call the Skill tool for whichever skills the `## Notes` block names. If in doubt, call the Skill tool twice, for "grilling" and "domain-modeling".
 4. Record the resolution: post the answer as a **resolution comment**, **close** the issue, and **append a context pointer** to the map's Decisions-so-far.
 5. Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from **Not yet specified** so it lives only as its new ticket. If the answer reveals that a ticket (this one or another) sits beyond the destination, **rule it out of scope** rather than resolving it on the route. If the decision invalidates other parts of the map, update or delete those tickets.
+6. **If that leaves the map clear** — no open decision tickets, **Not yet specified** empty — stop and tell the user the way to the destination is clear and the map is ready to hand over.
 
 The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.
+
+### Hand the map over
+
+User invokes with a cleared map: every decision ticket closed, **Not yet specified** empty. The map's second life starts here — it becomes the umbrella the implementation tickets hang from, so design and build sit under one issue. Both to-spec and to-tickets are user entry points, reserved from the Skill tool: follow their documents.
+
+1. **Write the spec(s)** the destination named. The map body is low resolution, so **zoom every closed ticket** for the detail its resolution holds: the spec is where the route's decisions become something buildable. Read [`../to-spec/SKILL.md`](../to-spec/SKILL.md) and follow it, asking the user where each spec should land (a repo file, or a tracker issue as to-spec defaults) unless the map's **Notes** already say. How many specs the destination wants is a judgement call; one is the common case.
+2. **Break them into tickets.** Read [`../to-tickets/SKILL.md`](../to-tickets/SKILL.md) and follow it with the spec(s) **and the map as the umbrella**. It sizes and publishes the tickets, parents them to the map, and fills in the map's ticket list. How many tickets there are is its call, not yours.
+3. **Leave the map open**, still labelled `wayfinder:map`, linking the spec(s) it produced. Decisions-so-far is the design; the ticket list is the build. Report both, and that `/implement` on the map takes the tickets from here.
+
+**Nothing to build?** When the destination was a decision to lock or a change already made in place, there are no implementation tickets: close the map and say so.

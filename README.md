@@ -31,6 +31,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `grill-me` / `grill-with-docs` | Grilling variants. |
 | `handoff` | Hand work to another session. |
 | `implement` | Carry out a planned change. |
+| `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Survey and improve architecture. |
 | `prototype` | Build a throwaway prototype to answer a design question. |
 | `research` | Investigate against primary sources; capture findings as Markdown. |

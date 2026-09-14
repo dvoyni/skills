@@ -59,6 +59,8 @@ Iterate until the user approves the breakdown.
 
 **Two or more tickets get an umbrella.** The **umbrella** is a container ticket holding the whole breakdown. Publish it first so every other ticket can name it as parent, then fill in its ticket list once the children carry real identifiers. It gates nothing: the umbrella lists no blockers and no ticket is blocked by it. A lone ticket needs no umbrella.
 
+**An umbrella you are handed is the umbrella.** When the caller names an existing issue for the breakdown to hang from (a wayfinder map, say), parent every ticket to it — a lone ticket included — and add the ticket list to the body it already has rather than publishing one of your own; the rest of that body, its parent line included, stays as it stands.
+
 **Every ticket names one parent:** the umbrella when there is one, otherwise the spec the breakdown came from. The umbrella's own parent is that spec, referenced as the issue it was fetched from or as its path when the spec is a local file. Omit the parent when there is no spec.
 
 Publish the approved tickets. **How** depends on the tracker `/setup-matt-pocock-skills` configured; the tickets are the same either way, only the shape of the blocking edges and parent links changes:
@@ -68,7 +70,7 @@ Publish the approved tickets. **How** depends on the tracker `/setup-matt-pocock
 
 Work the **frontier**: any ticket whose blockers are all done. For a purely linear chain that means top to bottom.
 
-Do NOT close or modify the spec or any other pre-existing issue. The umbrella is yours to update.
+Do NOT close or modify the spec or any other pre-existing issue. The umbrella is yours to update, whether you published it or were handed it.
 
 <umbrella-template>
 

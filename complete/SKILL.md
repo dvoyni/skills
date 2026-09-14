@@ -28,7 +28,7 @@ Close a ticket once every acceptance criterion is met. Anything short of that st
 
 From each ticket you closed:
 
-- **Parent or map issue** — append the pointer its format asks for (a wayfinder map wants a line under Decisions-so-far). Gist and link; the resolution lives in one place.
+- **Parent or umbrella issue** — append the pointer its format asks for: an umbrella wants its ticket list ticked, a wayfinder map still charting wants a line under Decisions-so-far (a handed-over map is an umbrella, so it wants the tick). Gist and link; the resolution lives in one place.
 - **The frontier** — the tickets this one blocked and now unblocks. Name them: they are what someone takes next.
 - **Stale tickets** — anything this work made wrong or redundant. Update it where the fix is plain; otherwise flag it to the user and leave it as it stands.
 

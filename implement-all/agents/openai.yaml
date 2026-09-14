@@ -1,0 +1,5 @@
+interface:
+  display_name: "Implement All"
+  short_description: "Build every ticket under an umbrella in parallel"
+policy:
+  allow_implicit_invocation: false

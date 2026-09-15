@@ -1,6 +1,6 @@
 ---
 name: implement-something
-description: "Offer the next to-do ticket, grill out any gaps in it once accepted, then implement it."
+description: "Offer the next to-do ticket, reproduce it if it's a bug, grill out any gaps in it, then implement it."
 disable-model-invocation: true
 ---
 
@@ -42,12 +42,25 @@ Proceed, or take the next one?
 
 **Proceed**: **claim** the ticket by assigning it to the user where the tracker has assignees, so a parallel session skips it, then go to step 4.
 
-## 4. Grill the gaps
+## 4. Reproduce the bug
 
-A buildable ticket goes straight to step 5.
+A ticket that reports existing behaviour as wrong is a **bug**; any other ticket goes straight to step 5.
+
+Make the bug go **red**: drive the reported steps through the most direct observation available (a failing test, a scratch script, the running app) until you see the wrong behaviour yourself. The conditions the ticket leaves implicit (inputs, config, data state) are legwork; vary them before calling it.
+
+The step ends on one of two outcomes:
+
+- **Red**: write the reproduction into the ticket (the steps, what you observed, what should happen instead) so step 6 starts from a known failure. Anything the reproduction reveals that unsettles a hinge decision joins the gaps.
+- **Not red** once every condition the ticket names or implies has been tried: add a gap, "doesn't reproduce: <what you tried>". Whether the ticket needs detail, is already fixed, or gets built anyway is the user's call.
+
+Reproduction only observes: the fix waits for step 6.
+
+## 5. Grill the gaps
+
+A ticket with no gaps goes straight to step 6.
 
 Otherwise call the Skill tool with "grilling", seeding the design tree with the gaps you named. When the user confirms shared understanding, write the decisions into the ticket (sharpen its body, add the criteria it was missing) so the ticket stays the single source of truth for what gets built.
 
-## 5. Build it
+## 6. Build it
 
 Read [`../implement/SKILL.md`](../implement/SKILL.md) and follow it for this ticket alone. When the suite is green, report what was built and point the user at /complete to commit it and resolve the ticket.

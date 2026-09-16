@@ -1,6 +1,6 @@
 ---
 name: implement-something
-description: "Offer the next to-do ticket, reproduce it if it's a bug, grill out any gaps in it, then implement it."
+description: "Offer the next standalone ticket, reproduce it if it's a bug, grill out any gaps in it, then implement it."
 disable-model-invocation: true
 ---
 
@@ -10,9 +10,9 @@ The issue tracker should have been provided to you. If it wasn't, tell the user 
 
 ## 1. List the candidates
 
-A candidate is an open ticket labelled `to-do` (locally, the file marked `**Status:** to-do`): the user's mark for a standalone ticket, outside any umbrella or map. It also has to sit on the **frontier**: every blocker closed, nobody assigned. Order the candidates oldest first.
+A candidate is an open **unparented** ticket — nothing above it, no umbrella and no wayfinder map — carrying either mark: `to-do`, the user's hand-picked next job, or `ready-for-agent`, what /to-tickets and /to-spec publish. Locally both marks are the file's `**Status:**` line and the parent is its `**Parent:**` line. A candidate also has to sit on the **frontier**: every blocker closed, nobody assigned. Order the candidates oldest first.
 
-No candidates ends the run: say so, and name what any open `to-do` tickets are waiting on.
+No candidates ends the run: say so, and for every open `to-do` or `ready-for-agent` ticket name what holds it back — a blocker, an assignee, or the umbrella it hangs under.
 
 ## 2. Judge the next candidate
 

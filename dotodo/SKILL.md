@@ -1,5 +1,5 @@
 ---
-name: implement-something
+name: dotodo
 description: "Offer the next standalone ticket, reproduce it if it's a bug, grill out any gaps in it, then implement it."
 disable-model-invocation: true
 ---

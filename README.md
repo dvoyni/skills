@@ -27,11 +27,11 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `commit` | Stage everything and commit it with a one-line message from session context. |
 | `complete` | Commit the session's work, then write its resolution back into the tickets it came from. |
 | `domain-modeling` | Build and sharpen a project's domain model; `CONTEXT.md` and ADRs. |
+| `dotodo` | Offer the next standalone `to-do` / `ready-for-agent` ticket; once accepted, reproduce it if it's a bug, grill out its gaps and build it. |
 | `grilling` | Interview relentlessly to stress-test a plan or idea. |
 | `grill-me` / `grill-with-docs` | Grilling on demand; `grill-with-docs` also writes ADRs and glossary entries as it goes. |
 | `handoff` | Compact the conversation into a handoff document for another agent. |
 | `implement` | Implement a piece of work from a spec or set of tickets. |
-| `implement-something` | Offer the next standalone `to-do` / `ready-for-agent` ticket; once accepted, reproduce it if it's a bug, grill out its gaps and build it. |
 | `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them as visual HTML, then grill through the one you pick. |
 | `prototype` | Build a throwaway prototype to answer a design question. |

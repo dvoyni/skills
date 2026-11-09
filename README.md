@@ -22,7 +22,8 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 
 | Skill | What it does |
 | --- | --- |
-| `code-review` | Review changes since a fixed point, against standards and against spec. |
+| `code-review` | Review changes since a fixed point on three axes: standards, spec, and correctness. |
+| `code-simplification` | Simplify working code for clarity without changing its behaviour. |
 | `codebase-design` | Shared vocabulary for designing deep modules. |
 | `commit` | Stage everything and commit it with a one-line message from session context. |
 | `complete` | Commit the session's work, then write its resolution back into the tickets it came from. |
@@ -45,7 +46,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 
 ## Credit and licence
 
-Adapted from [`mattpocock/skills`](https://github.com/mattpocock/skills) by Matt Pocock, MIT licensed. Several skills here started as his and have been reworked; the rest are new. See [LICENSE](LICENSE), which carries both copyright notices.
+Adapted from [`mattpocock/skills`](https://github.com/mattpocock/skills) by Matt Pocock and [`addyosmani/agent-skills`](https://github.com/addyosmani/agent-skills) by Addy Osmani, both MIT licensed. Several skills here started as theirs or borrow from them, most since reworked; the rest are new. See [LICENSE](LICENSE), which carries all three copyright notices.
 
 ## Writing more
 

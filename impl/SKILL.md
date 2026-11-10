@@ -8,7 +8,6 @@ disable-model-invocation: true
 
 `implement` is a user entry point, reserved from the Skill tool, so the run follows its document instead.
 
-1. **Pin the fixed point.** Record `git rev-parse HEAD` before anything changes. Implement commits nothing, so the run's whole output is the uncommitted change on top of that commit. A tree that is already dirty would mix earlier work into simplify: ask whether that work belongs to this run before starting.
-2. **Implement.** Read [`../implement/SKILL.md`](../implement/SKILL.md) and follow it for the user's spec or tickets. Gate: what it took on is built, typecheck is clean, and the full suite is green.
-3. **Simplify.** Call the Skill tool with "simplify" for the uncommitted change. Keep only the simplifications the suite stays green under; undo any that turn it red. Gate: typecheck is clean and the full suite is green.
-4. **Hand over.** Report what was built and simplified, and the recorded commit as the fixed point for a /code-review the user runs when they choose. Once they're done, /complete commits the work and resolves the tickets.
+1. **Implement.** Read [`../implement/SKILL.md`](../implement/SKILL.md) and follow it for the user's spec or tickets. Gate: what it took on is built, typecheck is clean, and the full suite is green.
+2. **Simplify.** Call the Skill tool with "simplify" for the uncommitted change. Keep only the simplifications the suite stays green under; undo any that turn it red. Gate: typecheck is clean and the full suite is green.
+3. **Hand over.** Report what was built and simplified. Once the user is satisfied, /complete commits the work and resolves the tickets.

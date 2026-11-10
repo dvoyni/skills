@@ -1,0 +1,5 @@
+interface:
+  display_name: "Impl"
+  short_description: "Implement, simplify, then review"
+policy:
+  allow_implicit_invocation: false

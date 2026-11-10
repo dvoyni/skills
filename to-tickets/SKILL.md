@@ -30,10 +30,12 @@ Break the work into **tracer bullet** tickets.
 
 - Each slice cuts a narrow but COMPLETE path through every layer (schema, API, UI, tests): vertical, NOT a horizontal slice of one layer
 - A completed slice is demoable or verifiable on its own
-- Each slice is sized to fit in a single fresh context window
+- Each slice fits a **budget** of roughly 200 lines of hand-written production code, estimated from the code it will touch; tests, comments, config, generated files, and mechanical edits ride free
 - Any prefactoring should be done first
 
 </vertical-slice-rules>
+
+Estimate every slice against the budget. Split any slice over it along its path: one case, field, or variant per slice, the happy path ahead of its edge cases, a prefactor split off in front. A slice that can't get under budget and stay demoable stays whole, flagged for the quiz.
 
 Give each ticket its **blocking edges**: the other tickets that must complete before it can start. A ticket with no blockers can start immediately.
 
@@ -46,6 +48,7 @@ Present the proposed breakdown as a numbered list. For each ticket, show:
 - **Title**: short descriptive name
 - **Blocked by**: which other tickets (if any) must complete first
 - **What it delivers**: the end-to-end behaviour this ticket makes work
+- **Size**: its estimated budget lines, with any over-budget slice flagged and why it stays whole
 
 Ask the user:
 

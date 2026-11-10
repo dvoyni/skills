@@ -32,6 +32,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `grilling` | Interview relentlessly to stress-test a plan or idea. |
 | `grill-me` / `grill-with-docs` | Grilling on demand; `grill-with-docs` also writes ADRs and glossary entries as it goes. |
 | `handoff` | Compact the conversation into a handoff document for another agent. |
+| `impl` | `implement`, then `simplify`, then `code-review`, gated on a green suite between stages. |
 | `implement` | Implement a piece of work from a spec or set of tickets. |
 | `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them as visual HTML, then grill through the one you pick. |

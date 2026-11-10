@@ -32,7 +32,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `grilling` | Interview relentlessly to stress-test a plan or idea. |
 | `grill-me` / `grill-with-docs` | Grilling on demand; `grill-with-docs` also writes ADRs and glossary entries as it goes. |
 | `handoff` | Compact the conversation into a handoff document for another agent. |
-| `impl` | `implement`, then `simplify`, then `code-review`, gated on a green suite between stages. |
+| `impl` | `implement`, then `simplify`, gated on a green suite between stages. |
 | `implement` | Implement a piece of work from a spec or set of tickets. |
 | `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them as visual HTML, then grill through the one you pick. |
@@ -42,6 +42,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `tdd` | Test-driven development. |
 | `teach` | Teach a new skill or concept within this workspace: missions, glossaries, learning records. |
 | `to-spec` / `to-tickets` | Turn intent into a spec, and a spec into tickets. |
+| `vscode-add-pace-display` | Patch the Claude Code VS Code extension so each usage bar gets a time-elapsed bar beneath it. |
 | `wayfinder` | Plan work too big for one session as a map of decision tickets, resolve them one by one, then hand the map over as the umbrella for implementation tickets. |
 | `writing-for-agents` | How to write any document an agent consumes. |
 

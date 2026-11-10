@@ -1,5 +1,5 @@
 interface:
   display_name: "Impl"
-  short_description: "Implement, simplify, then review"
+  short_description: "Implement, then simplify"
 policy:
   allow_implicit_invocation: false

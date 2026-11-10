@@ -32,6 +32,7 @@ Close a ticket once every acceptance criterion is met, in the way the tracker de
 From each ticket you closed:
 
 - **Parent or umbrella issue**: append the pointer its format asks for: an umbrella wants its ticket list ticked, a wayfinder map still charting wants a line under Decisions-so-far (a handed-over map is an umbrella, so it wants the tick). Gist and link; the resolution lives in one place.
+- **Complete umbrella**: when every ticket on an umbrella's list is now closed on the tracker, the umbrella is complete. Close it the way step 3 closes a ticket, its resolution one line on what the set delivered, then ripple outward from it in turn. A map still charting completes through handover instead: when your close leaves it clear (no open decision ticket, nothing under Not yet specified), it stays open.
 - **The frontier**: the tickets this one blocked and now unblocks. Name them: they are what someone takes next.
 - **Stale tickets**: anything this work made wrong or redundant. Update it where the fix is plain; otherwise flag it to the user and leave it as it stands.
 
@@ -43,4 +44,4 @@ If the commit fails, report the error verbatim and stop. On an in-repo tracker t
 
 ## 6. Report
 
-The hash, then one line per ticket: closed or open, and a clause of why. Refer to every ticket by its title, never a bare id. End with what now sits on the frontier.
+The hash, then one line per ticket, any umbrella you closed included: closed or open, and a clause of why. Refer to every ticket by its title, never a bare id. End with what now sits on the frontier, or, when a charting map came clear, that it is ready to hand over.

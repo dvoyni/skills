@@ -22,6 +22,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 
 | Skill | What it does |
 | --- | --- |
+| `check-rules` | Check a change against every rule the repo's agent docs set, and fix what breaks one. |
 | `code-review` | Review changes since a fixed point on three axes: standards, spec, and correctness. |
 | `code-simplification` | Simplify working code for clarity without changing its behaviour. |
 | `codebase-design` | Shared vocabulary for designing deep modules. |
@@ -32,7 +33,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `grilling` | Interview relentlessly to stress-test a plan or idea. |
 | `grill-me` / `grill-with-docs` | Grilling on demand; `grill-with-docs` also writes ADRs and glossary entries as it goes. |
 | `handoff` | Compact the conversation into a handoff document for another agent. |
-| `impl` | `implement`, then `simplify`, gated on a green suite between stages. |
+| `impl` | `implement`, then `simplify`, then `check-rules`, gated on a green suite between stages. |
 | `implement` | Implement a piece of work from a spec or set of tickets. |
 | `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them as visual HTML, then grill through the one you pick. |

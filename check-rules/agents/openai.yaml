@@ -1,0 +1,5 @@
+interface:
+  display_name: "Check Rules"
+  short_description: "Check a change against the repo's rules and fix breaks"
+policy:
+  allow_implicit_invocation: false

@@ -23,7 +23,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | Skill | What it does |
 | --- | --- |
 | `check-rules` | Check a change against every rule the repo's agent docs set, and fix what breaks one. |
-| `code-review` | Review changes since a fixed point on three axes: standards, spec, and correctness. |
+| `code-review` | Review changes since a fixed point on five axes (standards, rules, spec, correctness, simplification) as numbered proposals, optionally posted to a PR/MR. |
 | `code-simplification` | Simplify working code for clarity without changing its behaviour. |
 | `codebase-design` | Shared vocabulary for designing deep modules. |
 | `commit` | Stage everything and commit it with a one-line message from session context. |
@@ -35,7 +35,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills" -Target 
 | `handoff` | Compact the conversation into a handoff document for another agent. |
 | `impl` | `implement`, then `simplify`, then `check-rules`, gated on a green suite between stages. |
 | `implement` | Implement a piece of work from a spec or set of tickets. |
-| `implement-all` | Build every ticket under an umbrella in parallel branches, merged back as each lands. |
+| `implement-all` | Run `impl` on every ticket under an umbrella in parallel branches, merged back as each lands. |
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them as visual HTML, then grill through the one you pick. |
 | `prototype` | Build a throwaway prototype to answer a design question. |
 | `research` | Investigate against primary sources; capture findings as Markdown. |
